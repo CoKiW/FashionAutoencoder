@@ -31,19 +31,15 @@ pip install torch torchvision numpy pandas matplotlib tqdm
 
 ## 4. Menjalankan Rekonstruksi dari Terminal
 
-### Opsi A — Autoencoder penuh
+### Shell 1 — Autoencoder penuh
 ```
-python reconstruct.py --model autoencoder_fashion_mnist_dim2.pth --latent_dim 2 --index 10
+!python reconstruct.py --model output/autoencoder_fashion_mnist_dim2.pth --latent_dim 2 --index 10
 ```
 Menghasilkan: `original.png`, `reconstructed.png`, `comparison.png`
 
-### Opsi B — Decoder saja
+### Shell 2 — Decoder saja
 ```
-python generate_from_decoder.py --decoder decoder_fashion_mnist_dim2.pth --latent_dim 2 --z1 0.5 --z2 -1.2
-```
-atau untuk latent_dim > 2:
-```
-python generate_from_decoder.py --decoder decoder_fashion_mnist_dim8.pth --latent_dim 8 --latent "0.5,-1.2,0.3,0.8,0.1,-0.4,0.2,0.0"
+!python generate_from_decoder.py --decoder output/decoder_fashion_mnist_dim2.pth --latent_dim 2 --z1 0.5 --z2 -1.2
 ```
 Menghasilkan: `generated_image.png`
 
